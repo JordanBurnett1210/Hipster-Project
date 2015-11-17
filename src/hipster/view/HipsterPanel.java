@@ -14,13 +14,12 @@ public class HipsterPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JComboBox<String> phraseComboBox;
 	private JLabel bookPageCountLabel;
-	private JLabel
 	
 	public HipsterPanel(Controller baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
-		
+		phraseComboBox = new JComboBox<String>();
 		
 		setupComboBox();
 		setupPanel();
@@ -64,7 +63,7 @@ public class HipsterPanel extends JPanel
 				int green = (int) (Math.random() * 256);
 				int blue = (int) (Math.random() * 256);
 				setBackground(new Color(red, green, blue));
-				String updatedTitle = phraseComboBox.getSelectedItem().toStng();
+				String updatedTitle = phraseComboBox.getSelectedItem().toString();
 				baseController.getBaseFrame().setTitle(updatedTitle);
 			}	
 		});
