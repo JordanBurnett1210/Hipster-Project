@@ -85,8 +85,15 @@ public class HipsterPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, changeBookButton, -10, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, bookAuthorLabel, 0, SpringLayout.WEST, phraseComboBox);
 		baseLayout.putConstraint(SpringLayout.WEST, bookTitleLabel, 0, SpringLayout.WEST, phraseComboBox);
-		baseLayout.putConstraint(SpringLayout.WEST, bookPriceLabel, 0, SpringLayout.WEST, phraseComboBox);
-				
+		baseLayout.putConstraint(SpringLayout.WEST, bookPriceLabel, 0, SpringLayout.WEST, phraseComboBox);			
+	}
+	
+	private void changeColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		setBackground(new Color(red, green, blue));
 	}
 	
 	private void setupListeners()
@@ -95,10 +102,7 @@ public class HipsterPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent section)
 			{
-				int red = (int) (Math.random() * 256);
-				int green = (int) (Math.random() * 256);
-				int blue = (int) (Math.random() * 256);
-				setBackground(new Color(red, green, blue));
+				changeColor();
 				String updatedTitle = phraseComboBox.getSelectedItem().toString();
 				baseController.getBaseFrame().setTitle(updatedTitle);
 			}	
@@ -117,6 +121,7 @@ public class HipsterPanel extends JPanel
 					bookPriceLabel.setText("Book price: " + tempBooks[startClick].getPrice());
 					bookPageCountLabel.setText("Book pages: " + tempBooks[startClick].getPageCount());
 					startClick++;
+					changeColor();
 				}
 				else
 				{
@@ -126,6 +131,7 @@ public class HipsterPanel extends JPanel
 					bookTitleLabel.setText("Book title: ");
 					bookPageCountLabel.setText("Book pages: ");
 					bookPriceLabel.setText("Book price: ");
+					changeColor();
 				}
 			}
 		});

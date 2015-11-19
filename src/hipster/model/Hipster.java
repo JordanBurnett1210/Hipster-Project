@@ -10,7 +10,7 @@ public class Hipster
 	{
 		this.name = "";
 		this.hipsterPhrases = new String[4];
-		//this.hipsterBooks = new Book[3];
+		this.hipsterBooks = new Book[3];
 		setupArray();
 		setupBooks();
 	}

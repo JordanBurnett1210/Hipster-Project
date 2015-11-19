@@ -17,7 +17,7 @@ public class Book
 		this.price = -0.00;
 	}
 	
-	public Book(int pagecount, String author, String subject, String title, double price)
+	public Book(int pageCount, String author, String subject, String title, double price)
 	{
 		this.pageCount = pageCount;
 		this.author = author;
